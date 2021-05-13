@@ -1,9 +1,10 @@
 import React from 'react'
-import classes from './BrawllerItem.module.css'
+import classes from './BrawlerItem.module.css'
 import Card from '../ui/Card'
 
-const BrawllerItem = props =>  {
+const BrawlerItem = props =>  {
   const {item, image, content, actions} = classes
+  console.log(props)
   return (
     <div>
       <li className={ item }>
@@ -21,4 +22,4 @@ const BrawllerItem = props =>  {
   )
 }
 
-export default BrawllerItem
+export default BrawlerItem

@@ -8,14 +8,14 @@ const MainNavigation = () => {
   const {header, logo} = classes
   return (
     <header className={header}>
-      <div className={logo}>Brawllers</div>
+      <div className={logo}>Brawlers</div>
       <nav>
         <ul>
           <li>
-            <Link to='/'>All Brawllers</Link>
+            <Link to='/'>All Brawlers</Link>
           </li>
           <li>
-            <Link to='/new-brawller'>Add new Brawller</Link>
+            <Link to='/new-brawler'>Add new Brawler</Link>
           </li>
           <li>
             <Link to='/favorites'>My Favorites</Link>

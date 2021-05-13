@@ -1,8 +1,8 @@
 import { useRef } from 'react'
 import Card from '../ui/Card'
-import classes from './NewBrawllerForm.module.css'
+import classes from './NewBrawlerForm.module.css'
 
-const NewBrawllerForm = () => {
+const NewBrawlerForm = props => {
   const nameInputRef = useRef()
   const imageInputRef = useRef()
   const typeInputRef = useRef()
@@ -15,24 +15,24 @@ const NewBrawllerForm = () => {
     const enteredType = typeInputRef.current.value
     const enteredDescription = descriptionInputRef.current.value
 
-    const brawllerData = {
+    const brawlerData = {
       name: enteredname,
       image: enteredImage,
       type: enteredType,
       description: enteredDescription,
     }
-    console.log(brawllerData)
+    props.onAddBrawler(brawlerData)
   }
 
   return (
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor='name'>Brawller Name</label>
+          <label htmlFor='name'>Brawler Name</label>
           <input type='text' required id='name' ref={nameInputRef}/>
         </div>
         <div className={classes.control}>
-          <label htmlFor='image'>Brawller Image</label>
+          <label htmlFor='image'>Brawler Image</label>
           <input type='url' required id='image' ref={imageInputRef}/>
         </div>
         <div className={classes.control}>
@@ -41,14 +41,14 @@ const NewBrawllerForm = () => {
         </div>
         <div className={classes.control}>
           <label htmlFor='description'>Description</label>
-          <textarea id='description' required rows='5' ref={descriptionInputRef}></textarea>
+          <textarea id='description' required rows='5' ref={descriptionInputRef}/>
         </div>
         <div className={classes.actions}>
-          <button>Add Brawller</button>
+          <button>Add Brawler</button>
         </div>
       </form>
     </Card>
   )
 }
 
-export default NewBrawllerForm
+export default NewBrawlerForm

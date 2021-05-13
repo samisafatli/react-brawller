@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom'
-import AllBrawllers from './pages/AllBrawllers'
-import NewBrawller from './pages/NewBrawller'
+import AllBrawlers from './pages/AllBrawlers'
+import NewBrawler from './pages/NewBrawler'
 import Favorites from './pages/Favorites'
 import Layout from './components/layout/Layout'
 const App = () => {
@@ -9,10 +9,10 @@ const App = () => {
     <Layout>
       <Switch>
           <Route path='/' exact>
-            <AllBrawllers/>
+            <AllBrawlers/>
           </Route>
-          <Route path='/new-brawller'>
-            <NewBrawller/>
+          <Route path='/new-brawler'>
+            <NewBrawler/>
           </Route>
           <Route path='/favorites'>
             <Favorites/>
