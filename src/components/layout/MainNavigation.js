@@ -1,8 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 import classes from './MainNavigation.module.css';
-
 
 const MainNavigation = () => {
   const {header, logo} = classes

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import BrawlerList from '../components/brawlers/BrawlerList'
 
 const brawlerURL = 'https://brawlers-api-heroku.herokuapp.com/api/brawlers'

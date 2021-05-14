@@ -11,6 +11,8 @@
 }
 
 .image img {
+  margin-left: 15rem;
+  max-width: 10rem;
   width: 100%;
   object-fit: cover;
 }

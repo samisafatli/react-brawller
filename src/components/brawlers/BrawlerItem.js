@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from './BrawlerItem.module.css'
 import Card from '../ui/Card'
+import FavoritesContext from '../store/favorite-context'
 
 const BrawlerItem = props =>  {
+  const favoritesCtx = useContext(FavoritesContext)
+
+  const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id)
+
+  const toggleFavoriteStatusHandler = () => {
+    if (itemIsFavorite) {
+      favoritesCtx.removeFavorite(props.id)
+    } else {
+      favoritesCtx.addFavorite({
+        id: props.id,
+        image: props.image,
+        name: props.name,
+        type: props.type,
+        description: props.description,
+      })
+    }
+  }
+
   const {item, image, content, actions} = classes
-  console.log(props)
+
   return (
     <div>
       <li className={ item }>
@@ -15,7 +34,11 @@ const BrawlerItem = props =>  {
             <p>{props.type}</p>
             <p>{props.description}</p>
           </div>
-          <div className={ actions }><button>To Favorite</button></div>
+          <div className={ actions }>
+            <button onClick={toggleFavoriteStatusHandler}>
+              {itemIsFavorite ? 'Remove From Favorites' : 'Add Favorite'}
+            </button>
+          </div>
         </Card>
       </li>
     </div>
